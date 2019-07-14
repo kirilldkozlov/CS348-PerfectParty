@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  decor: one
+  item: one
+  quantity: 1
+
+two:
+  id: 
+  decor: two
+  item: two
+  quantity: 1

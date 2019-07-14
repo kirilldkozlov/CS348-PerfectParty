@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @decor_item.id %>
+</p>
+
+<p>
+  <strong>Decor:</strong>
+  <%= @decor_item.decor %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @decor_item.item %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @decor_item.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_decor_item_path(@decor_item) %> |
+<%= link_to 'Back', decor_items_path %>

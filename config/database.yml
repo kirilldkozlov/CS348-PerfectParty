@@ -20,6 +20,9 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: pguser
+  password: password
 
 development:
   <<: *default
@@ -81,5 +84,3 @@ test:
 production:
   <<: *default
   database: PerfectParty_production
-  username: PerfectParty
-  password: <%= ENV['PERFECTPARTY_DATABASE_PASSWORD'] %>

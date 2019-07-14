@@ -1,0 +1,2 @@
+module EntItemsHelper
+end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @ent_item.id %>
+</p>
+
+<p>
+  <strong>Ent:</strong>
+  <%= @ent_item.ent %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @ent_item.item %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @ent_item.quantity %>
+</p>
+
+<p>
+  <strong>Ord:</strong>
+  <%= @ent_item.ord %>
+</p>
+
+<%= link_to 'Edit', edit_ent_item_path(@ent_item) %> |
+<%= link_to 'Back', ent_items_path %>

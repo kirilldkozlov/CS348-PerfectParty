@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  client: one
+  venue: one
+  menu: one
+  decor: one
+  ent: one
+  attendees: 1
+  date: 2019-07-14
+
+two:
+  id: 
+  client: two
+  venue: two
+  menu: two
+  decor: two
+  ent: two
+  attendees: 1
+  date: 2019-07-14

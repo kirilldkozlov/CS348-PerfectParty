@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @event_item.id %>
+</p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @event_item.item %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @event_item.event %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @event_item.supplier %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @event_item.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_event_item_path(@event_item) %> |
+<%= link_to 'Back', event_items_path %>

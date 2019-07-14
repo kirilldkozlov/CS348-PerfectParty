@@ -1,0 +1,57 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :venue_id %>
+    <%= form.text_field :venue_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :menu_id %>
+    <%= form.text_field :menu_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :decor_id %>
+    <%= form.text_field :decor_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ent_id %>
+    <%= form.text_field :ent_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attendees %>
+    <%= form.number_field :attendees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

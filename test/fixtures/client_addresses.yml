@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  client: one
+  address: one
+
+two:
+  id: 
+  client: two
+  address: two
