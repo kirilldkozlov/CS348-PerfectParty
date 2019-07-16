@@ -1,23 +1,14 @@
 # Local Development Setup
-1. Install Docker Desktop <https://www.docker.com/products/docker-desktop>
 
+### Initial Setup
 
-2. Build the project docker container with the command :
-```
-docker build -t perfectparty .
-```
+1. Build the containers with the command ```docker-compose up --build```
+2. Create the rails db with the command ```docker-compose exec app rails db:create``` in a different terminal
+3. Run the initial migrations with the command ```docker-compose exec app rails db:migrate RAILS_ENV=development``` in a different terminal
 
-3. Run the project docker container with interactive terminal with the command:
-```
-docker run -it perfectparty /bin/bash
-```
+### Testing
 
-#Local Development
-```
-docker-compose up (start containers)
-docker-compose down (close containers)
-docker-compose exec app rails db:create (create initial db)
-docker-compose exec app rails db:migrate RAILS_ENV=development (run migration)
-```
+1. Start the containers with ```docker-compose up```
+2. Stop the containers with ```docker-compose down``` when you're done
 
 <small>Followed guide from <https://auth0.com/blog/ruby-on-rails-killer-workflow-with-docker-part-1/#Development-Workflow>.</small>
