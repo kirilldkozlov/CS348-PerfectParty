@@ -69,6 +69,6 @@ class DecorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def decor_params
-      params.require(:decor).permit(:id)
+      params.require(:decor)
     end
 end
