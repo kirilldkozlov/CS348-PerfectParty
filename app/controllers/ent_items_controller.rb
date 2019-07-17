@@ -69,6 +69,6 @@ class EntItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ent_item_params
-      params.require(:ent_item).permit(:id, :ent_id, :item_id, :quantity, :ord)
+      params.require(:ent_item).permit(:ent_id, :item_id, :quantity, :ord)
     end
 end
