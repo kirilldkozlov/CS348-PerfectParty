@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Type</th>
+      <th scope="col">Item Type</th>
       <th scope="col">Name</th>
       <th scope="col">Name</th>
       <th scope="col">Url</th>
@@ -21,8 +21,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.id %></td>
-        <td><%= item.type %></td>
-        <td><%= item.name %></td>
+        <td><%= item.item_type %></td>
         <td><%= item.name %></td>
         <td><%= item.url %></td>
         <td><%= item.desc %></td>
