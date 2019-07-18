@@ -13,23 +13,33 @@
                     Actions
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/event_items">Event Items</a>
-                        <a class="dropdown-item" href="/events">Events</a>
-                        <a class="dropdown-item" href="/decor_items">Decor Items</a>
-                        <a class="dropdown-item" href="/decors">Decors</a>
-                        <a class="dropdown-item" href="/ent_items">Entertainment Items</a>
-                        <a class="dropdown-item" href="/ents">Entertainments</a>
-                        <a class="dropdown-item" href="/menu_items">Menu Items</a>
-                        <a class="dropdown-item" href="/menus">Menus</a>
-                        <a class="dropdown-item" href="/supplier_items">Supplier Items</a>
-                        <a class="dropdown-item" href="/ratings">Ratings</a>
-                        <a class="dropdown-item" href="/suppliers">Suppliers</a>
-                        <a class="dropdown-item" href="/items">Items</a>
-                        <a class="dropdown-item" href="/venue_addresses">Venue Addresses</a>
-                        <a class="dropdown-item" href="/client_addresses">Client Addresses</a>
-                        <a class="dropdown-item" href="/addresses">Addresses</a>
-                        <a class="dropdown-item" href="/venues">Venues</a>
-                        <a class="dropdown-item" href="/clients">Clients</a>
+
+                    <%= link_to 'Clients', clients_path, :class => "dropdown-item" %>
+                    <%= link_to 'Venues', venues_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Addresses', addresses_path, :class => "dropdown-item" %>
+                    <%= link_to 'Venue Addresses', venue_addresses_path, :class => "dropdown-item" %>
+                    <%= link_to 'Client Addresses', client_addresses_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Events', events_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Event Items', event_items_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Decors', decors_path, :class => "dropdown-item" %>
+                    <%= link_to 'Decor Items', decor_items_path, :class => "dropdown-item" %>
+
+
+                    <%= link_to 'Entertainments', ents_path, :class => "dropdown-item" %>
+                    <%= link_to 'Entertainment Items', ent_items_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Menus', menus_path, :class => "dropdown-item" %>
+                    <%= link_to 'Menu Items', menu_items_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Suppliers', suppliers_path, :class => "dropdown-item" %>
+                    <%= link_to 'Supplier Items', supplier_items_path, :class => "dropdown-item" %>
+
+                    <%= link_to 'Items', items_path, :class => "dropdown-item" %>
+
                 </div>
 
             </li>
