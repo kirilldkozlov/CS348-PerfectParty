@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Event Items</h1>
+<div class="jumbotron">
+  <h1>Event Items<h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Item</th>
-      <th>Event</th>
-      <th>Supplier</th>
-      <th>Quantity</th>
+      <th scope="col">Id</th>
+      <th scope="col">Item</th>
+      <th scope="col">Event</th>
+      <th scope="col">Supplier</th>
+      <th scope="col">Quantity</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Event Item', new_event_item_path %>
+<%= link_to 'New Event Item', new_event_item_path, :class => "btn btn-primary" %>

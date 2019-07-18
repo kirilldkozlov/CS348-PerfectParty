@@ -11,32 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
+  <div class="form-group">
+    <%= form.label :item_type  %>
+    <%= form.select :item_type, Item.item_types.keys, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :url %>
-    <%= form.text_field :url %>
+    <%= form.text_field :url, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :desc %>
-    <%= form.text_area :desc %>
+    <%= form.text_area :desc, :class => "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", :class => "btn btn-primary" %>
   </div>
+    
 <% end %>

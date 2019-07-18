@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Ents</h1>
+<div class="jumbotron">
+  <h1>Ents<h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Id</th>
+      <th scope="col">Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ent', new_ent_path %>
+<%= link_to 'New Ent', new_ent_path, :class => "btn btn-primary" %>

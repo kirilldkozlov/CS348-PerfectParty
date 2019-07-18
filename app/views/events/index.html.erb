@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div class="jumbotron">
+  <h1>Events<h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Client</th>
-      <th>Venue</th>
-      <th>Menu</th>
-      <th>Decor</th>
-      <th>Ent</th>
-      <th>Attendees</th>
-      <th>Date</th>
+      <th scope="col">Id</th>
+      <th scope="col">Client</th>
+      <th scope="col">Venue</th>
+      <th scope="col">Menu</th>
+      <th scope="col">Decor</th>
+      <th scope="col">Ent</th>
+      <th scope="col">Attendees</th>
+      <th scope="col">Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,4 +40,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, :class => "btn btn-primary" %>

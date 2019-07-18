@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Venue Addresses</h1>
+<div class="jumbotron">
+  <h1>Venue Addresses<h1>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Venue</th>
-      <th>Address</th>
+      <th scope="col">Id</th>
+      <th scope="col">Venue</th>
+      <th scope="col">Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Venue Address', new_venue_address_path %>
+<%= link_to 'New Venue Address', new_venue_address_path, :class => "btn btn-primary" %>

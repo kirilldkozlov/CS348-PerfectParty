@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'clients#index'
   resources :event_items
   resources :events
   resources :decor_items
