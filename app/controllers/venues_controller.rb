@@ -4,7 +4,14 @@ class VenuesController < ApplicationController
   # GET /venues
   # GET /venues.json
   def index
-    @venues = Venue.all
+    @city = params[:city] || ""
+    @venues = params[:city].blank? ? Venue.all :
+      Venue.joins(venue_address: :address)
+        .where(
+          Address.arel_table[:city]
+            .lower
+            .matches("%#{params[:city].downcase}%")
+        )
   end
 
   # GET /venues/1
