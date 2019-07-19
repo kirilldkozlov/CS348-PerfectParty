@@ -69,6 +69,6 @@ class EntsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ent_params
-      params.require(:ent).permit(:id)
+      params.require(:ent)
     end
 end

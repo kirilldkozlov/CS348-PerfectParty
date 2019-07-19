@@ -69,6 +69,6 @@ class EventItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_item_params
-      params.require(:event_item).permit(:id, :item_id, :event_id, :supplier_id, :quantity)
+      params.require(:event_item).permit(:item_id, :event_id, :supplier_id, :quantity)
     end
 end

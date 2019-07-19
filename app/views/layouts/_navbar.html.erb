@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" href="/">PerfectParty</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Actions
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <%= link_to 'Clients', clients_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Venues', venues_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Addresses', addresses_path, :class => "dropdown-item" %>
+                    <%= link_to 'Venue Addresses', venue_addresses_path, :class => "dropdown-item" %>
+                    <%= link_to 'Client Addresses', client_addresses_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Events', events_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Event Items', event_items_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Decors', decors_path, :class => "dropdown-item" %>
+                    <%= link_to 'Decor Items', decor_items_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Entertainments', ents_path, :class => "dropdown-item" %>
+                    <%= link_to 'Entertainment Items', ent_items_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Menus', menus_path, :class => "dropdown-item" %>
+                    <%= link_to 'Menu Items', menu_items_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Suppliers', suppliers_path, :class => "dropdown-item" %>
+                    <%= link_to 'Supplier Items', supplier_items_path, :class => "dropdown-item" %>
+                    <div class="dropdown-divider"></div>
+                    <%= link_to 'Items', items_path, :class => "dropdown-item" %>
+
+                </div>
+
+            </li>
+        </ul>
+    </div>
+</nav>
