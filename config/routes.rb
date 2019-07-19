@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :menu_items
   resources :menus
   resources :supplier_items
-  resources :ratings
+  resources :ratings, except: [:show, :edit, :update]
   resources :suppliers
   resources :items
   resources :venue_addresses
@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :venues
   resources :clients
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "ratings/new/:supplier_id", to: "ratings#new",  as: :supplier_new_rating
 end

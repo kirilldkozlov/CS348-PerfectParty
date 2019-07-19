@@ -11,7 +11,7 @@ class VenuesController < ApplicationController
           Address.arel_table[:city]
             .lower
             .matches("%#{params[:city].downcase}%")
-        )
+        ).order(:cost)
   end
 
   # GET /venues/1
