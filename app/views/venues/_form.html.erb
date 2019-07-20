@@ -11,17 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :cost %>
-    <%= form.text_field :cost %>
+    <%= form.number_field :cost, class: "form-control"  %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <%= form.fields_for :venue_address do |venue_address| %>
+      <div class="form-group">
+       <%= venue_address.label :address_id, 'Address:' %>
+       <%= venue_address.collection_select :address_id, Address.all, :id, :full_address, {}, { class: "form-control" } %>
+     </div>
+ <% end %>
+
+  <div class="form-group">
+    <%= form.submit :Submit, class: "btn btn-primary"  %>
   </div>
 <% end %>

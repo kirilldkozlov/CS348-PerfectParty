@@ -19,10 +19,10 @@
     <% @ratings.each do |rating| %>
       <tr>
         <td><%= rating.id %></td>
-        <td><%= rating.supplier.first_name + " " + rating.supplier.last_name %></td>
+        <td><%= rating.supplier.full_name %></td>
         <td><%= rating.score %></td>
         <td><%= simple_format(rating.comment) %></td>
-        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', rating, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger pull-right" %></td>
       </tr>
     <% end %>
   </tbody>
