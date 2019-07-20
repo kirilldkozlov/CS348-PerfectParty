@@ -6,9 +6,11 @@
 
 <div class="input-group mb-3">
   <%= hidden_field_tag 'old-val', @city %>
-  <%= text_field_tag "city", @city, placeholder: "Search by city", class: "search-text" %>
-  <div class="input-group-append">
-    <%=button_tag 'Search', type: 'button', class: "btn btn-sm btn-secondary search-btn"  %>
+  <div class="mb-2" style="margin-right: 0.5em">
+    <%= text_field_tag "city", @city, placeholder: "Search by city", class: "form-control search-text" %>
+  </div>
+  <div class="mb-2">
+    <%=button_tag 'Search', type: 'button', class: "btn btn-secondary search-btn"  %>
   </div>
 </div>
 
