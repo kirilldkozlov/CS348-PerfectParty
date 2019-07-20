@@ -21,7 +21,6 @@ class RatingsController < ApplicationController
     respond_to do |format|
       if @rating.save
         format.html { redirect_to(suppliers_path, notice: 'Rating was successfully created.') }
-        format.json { redirect_to(suppliers_path, notice: 'Rating was successfully created.') }
       else
         format.html { render :new }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
