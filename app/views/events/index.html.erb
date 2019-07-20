@@ -11,8 +11,6 @@
       <th scope="col">Client</th>
       <th scope="col">Venue</th>
       <th scope="col">Menu</th>
-      <th scope="col">Decor</th>
-      <th scope="col">Ent</th>
       <th scope="col">Attendees</th>
       <th scope="col">Date</th>
       <th colspan="3"></th>
@@ -23,11 +21,9 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.id %></td>
-        <td><%= event.client %></td>
-        <td><%= event.venue %></td>
-        <td><%= event.menu %></td>
-        <td><%= event.decor %></td>
-        <td><%= event.ent %></td>
+        <td><%= event.client.full_name %></td>
+        <td><%= event.venue.name %></td>
+        <td><%= event.menu.name %></td>
         <td><%= event.attendees %></td>
         <td><%= event.date %></td>
         <td><%= link_to 'Show', event %></td>

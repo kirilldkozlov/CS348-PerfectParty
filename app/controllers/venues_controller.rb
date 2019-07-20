@@ -17,11 +17,19 @@ class VenuesController < ApplicationController
   # GET /venues/1
   # GET /venues/1.json
   def show
+    @events_hosted = Venue.find_by_sql(["
+      SELECT venues.id, venues.name, COUNT(events.venue_id) AS num_events
+        FROM events
+	      LEFT JOIN venues ON venues.id = events.venue_id
+	      WHERE venues.id = ?
+	      GROUP BY venues.id, venues.name;
+      ", @venue.id])
   end
 
   # GET /venues/new
   def new
     @venue = Venue.new
+    @venue.build_venue_address
   end
 
   # GET /venues/1/edit
@@ -34,7 +42,7 @@ class VenuesController < ApplicationController
     @venue = Venue.new(venue_params)
 
     respond_to do |format|
-      if @venue.save
+      if @venue.save!
         format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
         format.json { render :show, status: :created, location: @venue }
       else
@@ -76,6 +84,6 @@ class VenuesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venue_params
-      params.require(:venue).permit(:id, :name, :cost)
+      params.require(:venue).permit!
     end
 end
