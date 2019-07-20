@@ -4,6 +4,16 @@
   <h1>Venues<h1>
 </div>
 
+<div class="input-group mb-3">
+  <%= hidden_field_tag 'old-val', @city %>
+  <div class="mb-2" style="margin-right: 0.5em">
+    <%= text_field_tag "city", @city, placeholder: "Search by city", class: "form-control search-text" %>
+  </div>
+  <div class="mb-2">
+    <%=button_tag 'Search', type: 'button', class: "btn btn-secondary search-btn"  %>
+  </div>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -28,4 +38,4 @@
   </tbody>
 </table>
 
-<%= link_to 'New Venue', new_venue_path, :class => "btn btn-primary" %>
+<%= link_to 'New Venue', new_venue_path, class: "btn btn-primary" %>

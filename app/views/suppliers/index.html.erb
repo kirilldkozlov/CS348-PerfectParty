@@ -4,6 +4,19 @@
   <h1>Suppliers<h1>
 </div>
 
+<div class="form-inline" style="margin-bottom: 1em;">
+  <%= hidden_field_tag 'old-val', @rating %>
+  <h4 style="margin-right: 0.5em;">Filter by average rating</h4>
+  <div class="modal-review__rating-order-wrap mb-2">
+    <span id="star-1" data-rating-value="1"></span>
+    <span id="star-2" data-rating-value="2"></span>
+    <span id="star-3" data-rating-value="3"></span>
+    <span id="star-4" data-rating-value="4"></span>
+    <span id="star-5" data-rating-value="5"></span>
+  </div>
+  <button id="reset-supplier" type="reset" class="btn btn-danger mb-2" style="margin-left: 0.5em;">Reset</button>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -12,6 +25,7 @@
       <th scope="col">Last name</th>
       <th scope="col">Telephone</th>
       <th scope="col">Events supplied</th>
+      <th scope="col">Avg. rating</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,7 +38,8 @@
         <td><%= supplier.last_name %></td>
         <td><%= supplier.telephone %></td>
         <td><%= supplier.events_supplied %></td>
-        <td><%= link_to 'Show', supplier %></td>
+        <td><%= supplier.avg_rating ? supplier.avg_rating.round(1) : "-" %></td>
+        <td><%= link_to 'Rate', supplier_new_rating_path(supplier_id: supplier.id) %></td>
         <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

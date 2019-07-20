@@ -7,18 +7,10 @@ class RatingsController < ApplicationController
     @ratings = Rating.all
   end
 
-  # GET /ratings/1
-  # GET /ratings/1.json
-  def show
-  end
-
   # GET /ratings/new
   def new
+    @supplier = params[:supplier_id]
     @rating = Rating.new
-  end
-
-  # GET /ratings/1/edit
-  def edit
   end
 
   # POST /ratings
@@ -28,24 +20,9 @@ class RatingsController < ApplicationController
 
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
-        format.json { render :show, status: :created, location: @rating }
+        format.html { redirect_to(suppliers_path, notice: 'Rating was successfully created.') }
       else
         format.html { render :new }
-        format.json { render json: @rating.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /ratings/1
-  # PATCH/PUT /ratings/1.json
-  def update
-    respond_to do |format|
-      if @rating.update(rating_params)
-        format.html { redirect_to @rating, notice: 'Rating was successfully updated.' }
-        format.json { render :show, status: :ok, location: @rating }
-      else
-        format.html { render :edit }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +46,6 @@ class RatingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rating_params
-      params.require(:rating).permit(:supplier_id)
+      params.require(:rating).permit(:supplier_id, :score, :comment)
     end
 end
