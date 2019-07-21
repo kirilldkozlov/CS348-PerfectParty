@@ -11,4 +11,8 @@ class Client < ApplicationRecord
   :message => "is in an invalid format"
   validates :telephone, length: { is: 10}, numericality: true, uniqueness: true #check 10 chars, numbers, unique
   has_many :event, dependent: :delete_all
+
+  def full_name
+    first_name + " " + last_name
+  end
 end
