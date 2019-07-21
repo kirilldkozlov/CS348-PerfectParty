@@ -3,10 +3,11 @@ class CreateClients < ActiveRecord::Migration[5.2]
     create_table :clients do |t|
       t.string :first_name
       t.string :last_name
-      t.integer :telephone
-      t.string :email, unique: true
+      t.string :telephone
+      t.string :email
 
       t.timestamps
+
     end
   end
 end
