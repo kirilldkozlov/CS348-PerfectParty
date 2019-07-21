@@ -18,6 +18,7 @@ gem 'mini_racer', platforms: :ruby
 
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
+gem "autoprefixer-rails"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
