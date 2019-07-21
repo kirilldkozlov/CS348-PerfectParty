@@ -12,6 +12,16 @@ var page_functions = function() {
     }
   });
 
+  $(".search-btn-up").click(function(){
+    var name = $(".search-text-up").val();
+    var old_name = $("#old-val-up").val();
+
+    if (name != old_name) {
+      var path = (name) ? "/events/upcoming?name=" + name : "/events";
+      window.location.href = window.location.origin + path;
+    }
+  });
+
   $('#reset-supplier').click(function() {
       window.location.href = window.location.origin + "/suppliers";
   });

@@ -44,6 +44,8 @@ Rating.create!(supplier: sup_2, comment: "avg", score: 3)
 menu = Menu.create!(name: "Premium Pizza", desc: "The best pizza in the world!")
 decor = Decor.create!
 client = Client.create!(first_name: "Big Bill", last_name: "Guy", telephone: "416 967 1111", email: "bill@guy.com")
+client_bob = Client.create!(first_name: "Bob", last_name: "Aldrin", telephone: "416 967 1121", email: "bill@guy.com")
 ent = Ent.create!
 
-Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: 1.week.from_now)
+Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: DateTime.now.days_ago(-7))
+Event.create!(venue: venue_waterloo, client: client_bob, menu: menu, decor: decor, ent: ent, attendees: 25, date: DateTime.now.days_ago(-14))
