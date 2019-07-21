@@ -1,0 +1,46 @@
+<p></p>
+
+<div class="jumbotron">
+  <h1>Upcoming Events<h1>
+</div>
+
+<div class="input-group mb-3">
+  <%= hidden_field_tag 'old-val-up', @name %>
+  <div class="mb-2 w-50" style="margin-right: 0.5em">
+    <%= text_field_tag "name", @name, placeholder: "Search by client first or last name", class: "form-control search-text-up" %>
+  </div>
+  <div class="mb-2">
+    <%=button_tag 'Search', type: 'button', class: "btn btn-secondary search-btn-up"  %>
+  </div>
+</div>
+
+<% if @upcoming_events %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Client</th>
+        <th scope="col">Venue</th>
+        <th scope="col">Menu</th>
+        <th scope="col">Attendees</th>
+        <th scope="col">Date</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @upcoming_events.each do |event| %>
+        <tr>
+          <td><%= event.event_id %></td>
+          <td><%= event.client.full_name %></td>
+          <td><%= event.venue.name %></td>
+          <td><%= event.menu.name %></td>
+          <td><%= event.attendees %></td>
+          <td><%= event.date.to_formatted_s(:long_ordinal) %></td>
+          <td><%= link_to 'Show', event_path(event.event_id) %></td>
+          <td><%= link_to 'Destroy', event_path(event.event_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

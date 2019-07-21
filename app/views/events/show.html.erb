@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Event <%= @event.id %></h2>
+
 <p>
-  <strong>Id:</strong>
-  <%= @event.id %>
+  <strong>Date:</strong>
+  <%= @event.date.to_formatted_s(:long_ordinal) %>
 </p>
 
 <p>
@@ -11,34 +13,29 @@
 </p>
 
 <p>
-  <strong>Venue:</strong>
-  <%= @event.venue.name %>
-</p>
-
-<p>
-  <strong>Menu:</strong>
-  <%= @event.menu.name %>
-</p>
-
-<p>
-  <strong>Decor:</strong>
-  <%= @event.decor.id %>
-</p>
-
-<p>
-  <strong>Ent:</strong>
-  <%= @event.ent.id %>
-</p>
-
-<p>
   <strong>Attendees:</strong>
   <%= @event.attendees %>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @event.date %>
+  <strong>Venue:</strong>
+  <%= link_to @event.venue.name, venue_path(@event.venue) %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<p>
+  <strong>Menu:</strong>
+  <%= link_to @event.menu.name, menu_path(@event.menu) %>
+</p>
+
+<p>
+  <strong>Decor:</strong>
+  <%= link_to @event.decor.id, decor_path(@event.decor) %>
+</p>
+
+<p>
+  <strong>Ent:</strong>
+  <%= link_to @event.ent.id, ent_path(@event.ent) %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
+<%= link_to 'Index', events_path, class: "btn btn-info" %>

@@ -25,7 +25,7 @@
         <td><%= event.venue.name %></td>
         <td><%= event.menu.name %></td>
         <td><%= event.attendees %></td>
-        <td><%= event.date %></td>
+        <td><%= event.date.to_formatted_s(:long_ordinal) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

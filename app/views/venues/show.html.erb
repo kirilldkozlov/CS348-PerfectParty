@@ -13,7 +13,7 @@
 </p>
 
 <% if !@events_hosted.empty? %>
-  <p><strong>List of vents:</strong></p>
+  <p><strong>List of events:</strong></p>
   <table class="table">
     <thead>
       <tr>
@@ -41,4 +41,4 @@
 <% end %>
 
 <%= link_to 'Edit', edit_venue_path(@venue), class: "btn btn-primary" %>
-<%= link_to 'Back', venues_path, class: "btn btn-danger" %>
+<%= link_to 'Index', venues_path, class: "btn btn-info" %>

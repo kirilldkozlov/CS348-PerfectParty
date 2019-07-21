@@ -21,6 +21,22 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def upcoming
+    unless params[:name].blank?
+        @name = params[:name]
+
+        @upcoming_events = Event.find_by_sql(["
+          SELECT events.id AS event_id, events.client_id, events.venue_id, events.menu_id, events.attendees, events.date
+          	FROM events
+            LEFT JOIN clients ON events.client_id = clients.id
+            WHERE (LOWER(clients.first_name) LIKE ? OR  LOWER(clients.last_name) LIKE ?)
+            AND (events.date >= ?)
+            ORDER BY events.date DESC
+            LIMIT 5;
+          ", "%#{@name.downcase}%", "%#{@name.downcase}%", DateTime.now])
+      end
+  end
+
   # POST /events
   # POST /events.json
   def create
