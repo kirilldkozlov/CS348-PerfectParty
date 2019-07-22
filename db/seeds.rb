@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+EventItem.destroy_all
+Event.destroy_all
 Address.destroy_all
 Venue.destroy_all
 VenueAddress.destroy_all
@@ -13,9 +15,6 @@ VenueAddress.destroy_all
 Rating.destroy_all
 SupplierItem.destroy_all
 Supplier.destroy_all
-
-EventItem.destroy_all
-Event.destroy_all
 MenuItem.destroy_all
 Menu.destroy_all
 Client.destroy_all
@@ -26,9 +25,9 @@ EntItem.destroy_all
 Ent.destroy_all
 Item.destroy_all
 
-waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N AAA", city: "Waterloo",  province: "Ontario")
-toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M AAA", city: "Toronto",  province: "Ontario")
-toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M BBB", city: "Toronto",  province: "Ontario")
+waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N 6A8", city: "Waterloo",  province: "Ontario")
+toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M 5A4", city: "Toronto",  province: "Ontario")
+toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M 5B7", city: "Toronto",  province: "Ontario")
 
 venue_waterloo = Venue.create!(name: "Wonderful Waterloo", cost: 100)
 venue_toronto = Venue.create!(name: "Somewhere in Toronto", cost: 1000)
@@ -38,8 +37,8 @@ VenueAddress.create!(venue: venue_waterloo, address: waterloo)
 VenueAddress.create!(venue: venue_toronto, address: toronto)
 VenueAddress.create!(venue: venue_toronto_2, address: toronto_2)
 
-sup_1 = Supplier.create!(first_name: "Bob", last_name: "Builder", telephone: 12345678, events_supplied: 3)
-sup_2 = Supplier.create!(first_name: "Peter", last_name: "Painter", telephone: 12345678, events_supplied: 1)
+sup_1 = Supplier.create!(first_name: "Bob", last_name: "Builder", telephone: "1234567891", events_supplied: 3)
+sup_2 = Supplier.create!(first_name: "Peter", last_name: "Painter", telephone: "1234567891", events_supplied: 1)
 
 Rating.create!(supplier: sup_1, comment: "great", score: 5)
 Rating.create!(supplier: sup_1, comment: "great!!", score: 5)
@@ -50,11 +49,9 @@ Rating.create!(supplier: sup_2, comment: "avg", score: 3)
 menu = Menu.create!(name: "Premium Pizza", desc: "The best pizza in the world!")
 decor = Decor.create!
 client = Client.create!(first_name: "Big Bill", last_name: "Guy", telephone: "4169671111", email: "bill@guy.com")
-client_bob = Client.create!(first_name: "Bob", last_name: "Aldrin", telephone: "4169671121", email: "bob.aldrin@guy.com")
 ent = Ent.create!
 
-Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: DateTime.now.days_ago(-7))
-Event.create!(venue: venue_waterloo, client: client_bob, menu: menu, decor: decor, ent: ent, attendees: 25, date: DateTime.now.days_ago(-14))
+Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: 1.week.from_now)
 
 address1 = Address.create!(street_num: 10, street_name: "Albert Street", postal_code: "d3p 5e2", city: "Waterloo", province: "Ontario")
 address2 = Address.create!(street_num: 3, street_name: "Columbia", postal_code: "g7o 3k8", city: "Milton", province: "Ontario" )
@@ -65,6 +62,7 @@ address5 = Address.create!(street_num: 83, street_name: "Seagram", postal_code: 
 client1 = Client.create!(first_name: "Jay", last_name: "Gatsby", telephone: "9052829182", email: "sajkas@sjak.com")
 client2 = Client.create!(first_name: "Lebron", last_name: "James", telephone: "1234567890", email: "ijsjfk@dsal.com")
 client3 = Client.create!(first_name: "Bugs", last_name: "Bunny", telephone: "8176389172", email: "jkfd@sjak.com")
+
 
 supplier1 = Supplier.create!(first_name: "Left", last_name: "Shoe", telephone: "9052829182", events_supplied: 1)
 supplier2 = Supplier.create!(first_name: "Right", last_name: "Shoe", telephone: "1234567890", events_supplied: 3)
@@ -122,6 +120,7 @@ venue_addresses3 = VenueAddress.create!(venue: venue3, address: address3)
 venue_addresses4 = VenueAddress.create!(venue: venue4, address: address4)
 venue_addresses5 = VenueAddress.create!(venue: venue5, address: address5)
 
+
 Rating.create!(supplier: supplier1, comment: "comment1", score: 5)
 Rating.create!(supplier: supplier1, comment: "comment1", score: 2)
 Rating.create!(supplier: supplier1, comment: "comment1", score: 4)
@@ -153,3 +152,4 @@ supplier_item3 = SupplierItem.create!(supplier: supplier2, item: item13, quantit
 event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,20))
 event2 = Event.create!(client: client2, venue: venue2, menu: menu1, decor: decor1, ent: ents1, attendees: 200, date: 1.week.from_now)
 event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
+
