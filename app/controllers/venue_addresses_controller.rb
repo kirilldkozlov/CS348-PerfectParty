@@ -7,11 +7,6 @@ class VenueAddressesController < ApplicationController
     @venue_addresses = VenueAddress.all
   end
 
-  # GET /venue_addresses/1
-  # GET /venue_addresses/1.json
-  def show
-  end
-
   # GET /venue_addresses/new
   def new
     @venue_address = VenueAddress.new

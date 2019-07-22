@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id:</strong>
-  <%= @supplier.id %>
-</p>
+<h2>Supplier <%= @supplier.id %></h2>
 
 <p>
   <strong>First name:</strong>
@@ -25,5 +22,5 @@
   <%= @supplier.events_supplied %>
 </p>
 
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+<%= link_to 'Edit', edit_supplier_path(@supplier), class: "btn btn-primary" %>
+<%= link_to 'Delete', @supplier, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

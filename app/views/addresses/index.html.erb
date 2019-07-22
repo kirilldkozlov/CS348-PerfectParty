@@ -1,3 +1,5 @@
+<p></p>
+
 <div class="jumbotron">
   <h1>Addresses<h1>
 </div>
@@ -5,7 +7,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">Street num</th>
       <th scope="col">Street name</th>
       <th scope="col">Postal code</th>
@@ -18,7 +19,6 @@
   <tbody>
     <% @addresses.each do |address| %>
       <tr>
-        <td><%= address.id %></td>
         <td><%= address.street_num %></td>
         <td><%= address.street_name %></td>
         <td><%= address.postal_code %></td>
