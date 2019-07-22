@@ -7,6 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
+
+EventItem.destroy_all
+Event.destroy_all
 Address.destroy_all
 Venue.destroy_all
 VenueAddress.destroy_all
@@ -14,9 +17,6 @@ VenueAddress.destroy_all
 Rating.destroy_all
 SupplierItem.destroy_all
 Supplier.destroy_all
-
-EventItem.destroy_all
-Event.destroy_all
 MenuItem.destroy_all
 Menu.destroy_all
 Client.destroy_all
@@ -27,9 +27,9 @@ EntItem.destroy_all
 Ent.destroy_all
 Item.destroy_all
 
-waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N AAA", city: "Waterloo",  province: "Ontario")
-toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M AAA", city: "Toronto",  province: "Ontario")
-toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M BBB", city: "Toronto",  province: "Ontario")
+waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N 6A8", city: "Waterloo",  province: "Ontario")
+toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M 5A4", city: "Toronto",  province: "Ontario")
+toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M 5B7", city: "Toronto",  province: "Ontario")
 
 venue_waterloo = Venue.create!(name: "Wonderful Waterloo", cost: 100)
 venue_toronto = Venue.create!(name: "Somewhere in Toronto", cost: 1000)
