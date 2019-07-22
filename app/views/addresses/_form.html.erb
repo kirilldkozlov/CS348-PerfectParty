@@ -12,33 +12,33 @@
       </ul>
   <% end %>
 
-  <div class="field">
-    <%= form.label :street_num %>
-    <%= form.number_field :street_num %>
+  <div class="form-group">
+    <%= form.label :street_num, "Street number" %>
+    <%= form.number_field :street_num, class: "form-control", style: "width: 120px;" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :street_name %>
-    <%= form.text_field :street_name %>
+    <%= form.text_field :street_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :postal_code %>
-    <%= form.text_field :postal_code %>
+    <%= form.text_field :postal_code, class: "form-control", style: "width: 120px;" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :city %>
-    <%= form.text_field :city %>
+    <%= form.text_field :city, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :province %>
-    <%= form.text_field :province %>
+    <%= form.select :province,
+    options_for_select(Address::PROVINCES), {}, { class: "form-control", style: "width: 80px;" } %>
   </div>
 
-  <div class="actions">
-    
-  <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit :Submit, class: "btn btn-primary"  %>
   </div>
 <% end %>

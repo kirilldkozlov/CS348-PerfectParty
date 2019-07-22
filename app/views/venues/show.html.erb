@@ -8,6 +8,11 @@
 </p>
 
 <p>
+  <strong>Address:</strong>
+  <%= @venue.venue_address.address.full_address %>
+</p>
+
+<p>
   <strong>Events hosted:</strong>
   <%= (@events_hosted.empty?) ? "No events" : @events_hosted.first.num_events %>
 </p>
@@ -31,7 +36,7 @@
           <td><%= event.id %></td>
           <td><%= event.client.full_name %></td>
           <td><%= event.attendees %></td>
-          <td><%= event.date %></td>
+          <td><%= event.date.to_formatted_s(:long_ordinal) %></td>
           <td><%= link_to 'Show', event %></td>
           <td><%= link_to 'Cancel', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -41,4 +46,4 @@
 <% end %>
 
 <%= link_to 'Edit', edit_venue_path(@venue), class: "btn btn-primary" %>
-<%= link_to 'Index', venues_path, class: "btn btn-info" %>
+<%= link_to 'Delete', @venue, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
