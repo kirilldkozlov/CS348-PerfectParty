@@ -10,7 +10,7 @@ class Client < ApplicationRecord
   :with => /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i,
   :message => "is in an invalid format"
   validates :telephone, length: { is: 10}, numericality: true, uniqueness: true #check 10 chars, numbers, unique
-  has_many :event, dependent: :delete_all
+  has_many :event, dependent: :destroy
 
   def full_name
     first_name + " " + last_name

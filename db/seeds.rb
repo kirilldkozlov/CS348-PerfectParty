@@ -25,9 +25,9 @@ EntItem.destroy_all
 Ent.destroy_all
 Item.destroy_all
 
-waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N 6A8", city: "Waterloo",  province: "Ontario")
-toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M 5A4", city: "Toronto",  province: "Ontario")
-toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M 5B7", city: "Toronto",  province: "Ontario")
+waterloo = Address.create!(street_num: 1, street_name: "University St", postal_code: "N1N 6A8", city: "Waterloo",  province: "ON")
+toronto = Address.create!(street_num: 2, street_name: "Yonge St", postal_code: "M1M 5A4", city: "Toronto",  province: "ON")
+toronto_2 = Address.create!(street_num: 3, street_name: "King St", postal_code: "M1M 5B7", city: "Toronto",  province: "ON")
 
 venue_waterloo = Venue.create!(name: "Wonderful Waterloo", cost: 100)
 venue_toronto = Venue.create!(name: "Somewhere in Toronto", cost: 1000)
@@ -53,11 +53,11 @@ ent = Ent.create!
 
 Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: 1.week.from_now)
 
-address1 = Address.create!(street_num: 10, street_name: "Albert Street", postal_code: "d3p 5e2", city: "Waterloo", province: "Ontario")
-address2 = Address.create!(street_num: 3, street_name: "Columbia", postal_code: "g7o 3k8", city: "Milton", province: "Ontario" )
-address3 = Address.create!(street_num: 31, street_name: "Weber Street", postal_code: "j8e 3i9", city: "Toronto", province: "Ontario" )
-address4 = Address.create!(street_num: 56, street_name: "University Ave", postal_code: "q8d 5g7", city: "Toronto", province: "Ontario" )
-address5 = Address.create!(street_num: 83, street_name: "Seagram", postal_code: "n3s 7j2", city: "Branford", province: "Ontario" )
+address1 = Address.create!(street_num: 10, street_name: "Albert Street", postal_code: "d3p 5e2", city: "Waterloo", province: "ON")
+address2 = Address.create!(street_num: 3, street_name: "Columbia", postal_code: "g7o 3k8", city: "Milton", province: "ON" )
+address3 = Address.create!(street_num: 31, street_name: "Weber Street", postal_code: "j8e 3i9", city: "Toronto", province: "ON" )
+address4 = Address.create!(street_num: 56, street_name: "University Ave", postal_code: "q8d 5g7", city: "Toronto", province: "ON" )
+address5 = Address.create!(street_num: 83, street_name: "Seagram", postal_code: "n3s 7j2", city: "Branford", province: "ON" )
 
 client1 = Client.create!(first_name: "Jay", last_name: "Gatsby", telephone: "9052829182", email: "sajkas@sjak.com")
 client2 = Client.create!(first_name: "Lebron", last_name: "James", telephone: "1234567890", email: "ijsjfk@dsal.com")
@@ -152,4 +152,3 @@ supplier_item3 = SupplierItem.create!(supplier: supplier2, item: item13, quantit
 event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,20))
 event2 = Event.create!(client: client2, venue: venue2, menu: menu1, decor: decor1, ent: ents1, attendees: 200, date: 1.week.from_now)
 event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
-
