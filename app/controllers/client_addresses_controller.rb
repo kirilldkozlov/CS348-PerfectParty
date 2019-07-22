@@ -15,6 +15,11 @@ class ClientAddressesController < ApplicationController
   # GET /client_addresses/new
   def new
     @client_address = ClientAddress.new
+    @address = Address.all
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => client_address}
+    end
   end
 
   # GET /client_addresses/1/edit

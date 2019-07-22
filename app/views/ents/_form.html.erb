@@ -1,11 +1,13 @@
 <%= form_with(model: ent, local: true) do |form| %>
   <% if ent.errors.any? %>
-    <div id="error_explanation">
+    <div class="error-title">
       <h2><%= pluralize(ent.errors.count, "error") %> prohibited this ent from being saved:</h2>
-
+    </div>
       <ul>
       <% ent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class ="error-message">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
     </div>

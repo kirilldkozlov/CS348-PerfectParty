@@ -1,14 +1,16 @@
 <%= form_with(model: rating, local: true) do |form| %>
   <% if rating.errors.any? %>
-    <div id="error_explanation">
+    <div class = "error-title">
       <h2><%= pluralize(rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+    </div>
 
       <ul>
       <% rating.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class = "error-message">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
-    </div>
   <% end %>
 
   <%= form.hidden_field :supplier_id, value: @supplier %>

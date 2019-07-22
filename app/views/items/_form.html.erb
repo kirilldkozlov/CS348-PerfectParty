@@ -1,14 +1,16 @@
 <%= form_with(model: item, local: true) do |form| %>
   <% if item.errors.any? %>
-    <div id="error_explanation">
+    <div class="error-title">
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+    </div>
 
       <ul>
       <% item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="error-message">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
-    </div>
   <% end %>
 
   <div class="form-group">
