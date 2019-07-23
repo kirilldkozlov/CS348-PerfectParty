@@ -18,8 +18,8 @@
     <% @venue_addresses.each do |venue_address| %>
       <tr>
         <td><%= venue_address.id %></td>
-        <td><%= venue_address.venue %></td>
-        <td><%= venue_address.address %></td>
+        <td><%= venue_address.venue.name %></td>
+        <td><%= venue_address.address.full_address %></td>
         <td><%= link_to 'Show', venue_address %></td>
         <td><%= link_to 'Edit', edit_venue_address_path(venue_address) %></td>
         <td><%= link_to 'Destroy', venue_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
