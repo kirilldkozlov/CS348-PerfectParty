@@ -30,5 +30,5 @@
   <%= @client.client_address.address.full_address %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Edit', edit_client_path(@client), class: "btn btn-primary" %>
+<%= link_to 'Delete', @client, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

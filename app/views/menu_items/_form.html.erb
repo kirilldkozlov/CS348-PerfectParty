@@ -1,14 +1,15 @@
 <%= form_with(model: menu_item, local: true) do |form| %>
   <% if menu_item.errors.any? %>
-    <div id="error_explanation">
+    <div class="error-title">
       <h2><%= pluralize(menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
-
+    </div>
       <ul>
       <% menu_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="error-message">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
-    </div>
   <% end %>
 
   <div class="field">

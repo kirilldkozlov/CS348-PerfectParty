@@ -1,14 +1,16 @@
 <%= form_with(model: supplier, local: true) do |form| %>
   <% if supplier.errors.any? %>
-    <div id="error_explanation">
+    <div class="error-title">
       <h2><%= pluralize(supplier.errors.count, "error") %> prohibited this supplier from being saved:</h2>
+    </div>
 
       <ul>
       <% supplier.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="error-message">
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
-    </div>
   <% end %>
 
   <div class="form-group">

@@ -1,25 +1,30 @@
 <%= form_with(model: client_address, local: true) do |form| %>
   <% if client_address.errors.any? %>
-    <div id="error_explanation">
+    
+    <div class="error-title">
       <h2><%= pluralize(client_address.errors.count, "error") %> prohibited this client_address from being saved:</h2>
-
+    </div>
       <ul>
       <% client_address.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <div class="error-message" </div>
+          <li><%= message %></li>
+        </div>
       <% end %>
       </ul>
-    </div>
+  
+  
   <% end %>
 
+
   <div class="field">
-    <%= form.label :client_id %>
+   <%= form.label :client_id %>
     <%= form.text_field :client_id %>
   </div>
 
   <div class="field">
-    <%= form.label :address_id %>
-    <%= form.text_field :address_id %>
-  </div>
+  <%= form.label :address_id %>
+   <%= form.text_field :address_id %>
+ </div>
 
   <div class="actions">
     <%= form.submit %>
