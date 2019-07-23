@@ -7,10 +7,7 @@ class ClientAddressesController < ApplicationController
     @client_addresses = ClientAddress.all
   end
 
-  # GET /client_addresses/1
-  # GET /client_addresses/1.json
-  def show
-  end
+
 
   # GET /client_addresses/new
   def new

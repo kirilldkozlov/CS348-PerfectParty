@@ -18,8 +18,8 @@
     <% @client_addresses.each do |client_address| %>
       <tr>
         <td><%= client_address.id %></td>
-        <td><%= client_address.client %></td>
-        <td><%= client_address.address %></td>
+        <td><%= client_address.client.full_name %></td>
+        <td><%= client_address.address.full_address %></td>
         <td><%= link_to 'Show', client_address %></td>
         <td><%= link_to 'Edit', edit_client_address_path(client_address) %></td>
         <td><%= link_to 'Destroy', client_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>

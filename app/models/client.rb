@@ -1,5 +1,6 @@
 class Client < ApplicationRecord
   has_one :client_address
+  accepts_nested_attributes_for :client_address
   validates :telephone, :first_name, :last_name, :email, :presence => true #check all fields entered
   validates_format_of :first_name, :last_name, #check no numbers in names
   :multiline => true,
