@@ -10,6 +10,11 @@ class MenusController < ApplicationController
   # GET /menus/1
   # GET /menus/1.json
   def show
+    @menu_id = params[:id]
+    @menu_items = MenuItem.find_by_sql(["
+    SELECT *
+    FROM menu_items as mi, items as i
+    WHERE mi.menu_id=? AND mi.item_id=i.id", @menu_id])
   end
 
   # GET /menus/new
