@@ -23,8 +23,8 @@
         <% @supplier_items.each do |supplier_item| %>
           <tr>
             <td><%= supplier_item.id %></td>
-            <td><%= supplier_item.supplier %></td>
-            <td><%= supplier_item.item %></td>
+            <td><%= supplier_item.supplier.full_name  %></td>
+            <td><%= supplier_item.item.name %></td>
             <td><%= supplier_item.quantity %></td>
             <td><%= supplier_item.cost %></td>
             <td><%= link_to 'Show', supplier_item %></td>

@@ -12,6 +12,8 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Desc</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
     <% @ents.each do |ent| %>
       <tr>
         <td><%= ent.id %></td>
+        <td><%= ent.name %></td>
+        <td><%= ent.desc %></td>
         <td><%= link_to 'Show', ent %></td>
         <td><%= link_to 'Edit', edit_ent_path(ent) %></td>
         <td><%= link_to 'Destroy', ent, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -10,6 +10,11 @@ class DecorsController < ApplicationController
   # GET /decors/1
   # GET /decors/1.json
   def show
+    @decor_id = params[:id]
+    @decor_items = DecorItem.find_by_sql(["
+    SELECT *
+    FROM decor_items as di, items as i
+    WHERE di.decor_id=? AND di.item_id=i.id", @decor_id])
   end
 
   # GET /decors/new
@@ -19,6 +24,7 @@ class DecorsController < ApplicationController
 
   # GET /decors/1/edit
   def edit
+
   end
 
   # POST /decors
@@ -69,6 +75,6 @@ class DecorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def decor_params
-      params.require(:decor)
+      params.require(:decor).permit(:name, :desc)
     end
 end
