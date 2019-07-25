@@ -28,19 +28,19 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        if address_params[:client_exist]
+        if address_params[:client_exist] == "1"
           format.html { redirect_to new_client_with_address_path(address: @address.id), notice: 'Address was successfully created.' }
-        elsif address_params[:venue_exist]
+        elsif address_params[:venue_exist] == "1"
           format.html { redirect_to new_venue_with_address_path(address: @address.id), notice: 'Address was successfully created.' }
         else
           format.html { redirect_to @address, notice: 'Address was successfully created.' }
           format.json { render :show, status: :created, location: @address }
         end
       else
-        if address_params[:client_exist]
+        if address_params[:client_exist] == "1"
           @client = 1
           format.html { render action: :new }
-        elsif address_params[:venue_exist]
+        elsif address_params[:venue_exist] == "1"
           @venue = 1
           format.html { render action: :new }
         else
