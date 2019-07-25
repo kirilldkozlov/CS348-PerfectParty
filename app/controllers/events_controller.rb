@@ -53,21 +53,21 @@ class EventsController < ApplicationController
         menu = Menu.find(event_params[:menu_id])
 
         menu.menu_items.each do |item|
-          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:attendees])
+          EventItem.create!(item_id: item.item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:attendees])
         end
 
         # Decor
         decor = Decor.find(event_params[:decor_id])
 
         decor.decor_items.each do |item|
-          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:decor_count])
+          EventItem.create!(item_id: item.item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:decor_count])
         end
 
         # Ent
         ent = Ent.find(event_params[:ent_id])
 
         ent.ent_items.each do |item|
-          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:ent_count])
+          EventItem.create!(item_id: item.item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:ent_count])
         end
 
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
