@@ -9,5 +9,40 @@
   <%= @decor.id %>
 </p>
 
+
+<p>
+  <strong>Name:</strong>
+  <%= @decor.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @decor.desc %>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @decor_items.each do |decor_item| %>
+      <tr>
+        <td><%= decor_item.id %></td>
+        <td><%= link_to decor_item.item.name, item_path(decor_item.item) %></td>
+        <td><%= decor_item.quantity %></td>
+        <td><%= link_to 'Show', decor_item %></td>
+        <td><%= link_to 'Edit', edit_decor_item_path(decor_item) %></td>
+        <td><%= link_to 'Destroy', decor_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_decor_path(@decor) %> |
 <%= link_to 'Back', decors_path %>

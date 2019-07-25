@@ -9,7 +9,38 @@
   <%= @ent.id %>
 </p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @ent.name %>
+</p>
 
+<p>
+  <strong>Desc:</strong>
+  <%= @ent.desc %>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Ent Name</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ent_items.each do |ent_item| %>
+      <tr>
+        <td><%= ent_item.id %></td>
+        <td><%= link_to ent_item.item.name, item_path(ent_item.item) %></td>
+        <td><%= ent_item.quantity %></td>
+        <td><%= link_to 'Show', ent_item %></td>
+        <td><%= link_to 'Edit', edit_ent_item_path(ent_item) %></td>
+        <td><%= link_to 'Destroy', ent_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_ent_path(@ent) %> |
 <%= link_to 'Back', ents_path %>

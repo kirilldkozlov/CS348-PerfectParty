@@ -10,6 +10,11 @@ class EntsController < ApplicationController
   # GET /ents/1
   # GET /ents/1.json
   def show
+    @ent_id = params[:id]
+    @ent_items = EntItem.find_by_sql(["
+    SELECT *
+    FROM ent_items as ei, items as i
+    WHERE ei.ent_id=? AND ei.item_id=i.id", @ent_id])
   end
 
   # GET /ents/new
@@ -69,6 +74,6 @@ class EntsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ent_params
-      params.require(:ent)
+      params.require(:ent).permit(:name, :desc)
     end
 end

@@ -23,8 +23,8 @@
     <% @decor_items.each do |decor_item| %>
       <tr>
         <td><%= decor_item.id %></td>
-        <td><%= decor_item.decor %></td>
-        <td><%= decor_item.item %></td>
+        <td><%= link_to decor_item.decor.name, decor_path(decor_item.decor) %></td>
+        <td><%= link_to decor_item.item.name, item_path(decor_item.item) %></td>
         <td><%= decor_item.quantity %></td>
         <td><%= link_to 'Show', decor_item %></td>
         <td><%= link_to 'Edit', edit_decor_item_path(decor_item) %></td>

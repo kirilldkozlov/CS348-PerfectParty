@@ -24,8 +24,8 @@
     <% @ent_items.each do |ent_item| %>
       <tr>
         <td><%= ent_item.id %></td>
-        <td><%= ent_item.ent %></td>
-        <td><%= ent_item.item %></td>
+        <td><%= link_to ent_item.ent.name, ent_path(ent_item.ent) %></td>
+        <td><%= link_to ent_item.item.name, item_path(ent_item.item) %></td>
         <td><%= ent_item.quantity %></td>
         <td><%= ent_item.ord %></td>
         <td><%= link_to 'Show', ent_item %></td>
