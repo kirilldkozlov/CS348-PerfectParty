@@ -10,6 +10,11 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @cost = 0
+
+    @event.event_items.each do |event_item|
+      @cost = @cost + (event_item.quantity * event_item.item.cost)
+    end
   end
 
   # GET /events/new
@@ -40,10 +45,31 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @event = Event.new(event_params.except(:decor_count, :ent_count, :supplier_id))
 
     respond_to do |format|
       if @event.save
+        # Menu
+        menu = Menu.find(event_params[:menu_id])
+
+        menu.menu_items.each do |item|
+          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:attendees])
+        end
+
+        # Decor
+        decor = Decor.find(event_params[:decor_id])
+
+        decor.decor_items.each do |item|
+          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:decor_count])
+        end
+
+        # Ent
+        ent = Ent.find(event_params[:ent_id])
+
+        ent.ent_items.each do |item|
+          EventItem.create!(item_id: item.id, event_id: @event.id, supplier_id: event_params[:supplier_id], quantity: event_params[:ent_count])
+        end
+
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
@@ -57,7 +83,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update(event_params)
+      if @event.update(event_params.except(:decor_count, :ent_count, :supplier_id))
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -85,6 +111,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:client_id, :venue_id, :menu_id, :decor_id, :ent_id, :attendees, :date)
+      params.require(:event).permit(:client_id, :venue_id, :menu_id, :decor_id, :ent_id, :attendees, :date, :decor_count, :ent_count, :supplier_id)
     end
 end

@@ -13,42 +13,67 @@
       </ul>
   <% end %>
 
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
+  <div class="form-group">
+    <%= form.label :client_id, "Client:" %>
+    <%= form.collection_select :client_id, Client.all, :id, :full_name, {}, { class: "form-control" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :venue_id %>
-    <%= form.text_field :venue_id %>
+  <div class="form-group">
+    <%= form.label :venue_id, "Venue:" %>
+    <%= form.collection_select :venue_id, Venue.all, :id, :name, {}, { class: "form-control" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :menu_id %>
-    <%= form.text_field :menu_id %>
+  <div class="form-group">
+    <%= form.label :menu_id, "Menu:" %>
+    <%= form.collection_select :menu_id, Menu.all, :id, :name, {include_blank: true}, { class: "form-control" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :decor_id %>
-    <%= form.text_field :decor_id %>
+  <div class="form-group">
+    <%= form.label :menu_id, "Supplier:" %>
+    <%= form.collection_select :supplier_id, Supplier.all, :id, :full_name, {include_blank: true}, { class: "form-control" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :ent_id %>
-    <%= form.text_field :ent_id %>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="form-group">
+        <%= form.label :decor_id, "Decor Package:" %>
+        <%= form.collection_select :decor_id, Decor.all, :id, :name, {include_blank: true}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label "Quantity" %>
+        <%= form.number_field :decor_count, value: 1, class: "form-control", style: "width: 120px" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="form-group">
+        <%= form.label :ent_id, "Entertainment Option:" %>
+        <%= form.collection_select :ent_id, Ent.all, :id, :name, {include_blank: true}, { class: "form-control" } %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= form.label "Quantity" %>
+        <%= form.number_field :ent_count, value: 1, class: "form-control", style: "width: 120px" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= form.label :attendees %>
-    <%= form.number_field :attendees %>
+    <%= form.number_field :attendees, value: 1, min: 1, class: "form-control", style: "width: 120px" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.datetime_select :date, { class: "form-control" } %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit :Submit, class: "btn btn-primary"  %>
   </div>
 <% end %>

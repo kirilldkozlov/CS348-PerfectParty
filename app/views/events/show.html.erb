@@ -33,13 +33,38 @@
 
 <p>
   <strong>Decor:</strong>
-  <%= link_to @event.decor.id, decor_path(@event.decor) %>
+  <%= link_to @event.decor.name, decor_path(@event.decor) %>
 </p>
 
 <p>
   <strong>Ent:</strong>
-  <%= link_to @event.ent.id, ent_path(@event.ent) %>
+  <%= link_to @event.ent.name, ent_path(@event.ent) %>
 </p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @cost %>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Supplier</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event.event_items.each do |event_item| %>
+      <tr>
+        <td><%= event_item.item.name %></td>
+        <td><%= event_item.supplier.full_name  %></td>
+        <td><%= event_item.quantity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>
 <%= link_to 'Delete', @evemt, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>

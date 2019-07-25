@@ -47,11 +47,7 @@ Rating.create!(supplier: sup_2, comment: "bad", score: 1)
 Rating.create!(supplier: sup_2, comment: "avg", score: 3)
 
 menu = Menu.create!(name: "Premium Pizza", desc: "The best pizza in the world!")
-decor = Decor.create!
 client = Client.create!(first_name: "Big Bill", last_name: "Guy", telephone: "4169671111", email: "bill@guy.com")
-ent = Ent.create!
-
-Event.create!(venue: venue_waterloo, client: client, menu: menu, decor: decor, ent: ent, attendees: 20, date: 1.week.from_now)
 
 address1 = Address.create!(street_num: 10, street_name: "Albert Street", postal_code: "d3p 5e2", city: "Waterloo", province: "ON")
 address2 = Address.create!(street_num: 3, street_name: "Columbia", postal_code: "g7o 3k8", city: "Milton", province: "ON" )
@@ -73,42 +69,37 @@ supplier6 = Supplier.create!(first_name: "Hal", last_name: "Jordon", telephone: 
 supplier7 = Supplier.create!(first_name: "Tony", last_name: "Stark", telephone: "6381283748", events_supplied: 6)
 supplier8 = Supplier.create!(first_name: "Jon", last_name: "Snow", telephone: "8203748374", events_supplied: 2)
 
-decor1 = Decor.create!
-decor2 = Decor.create!
+decor1 = Decor.create!(name: "Floral", desc: "Nice")
+decor2 = Decor.create!(name: "Medieval Vibes", desc: "Throwback")
 
-ents1 = Ent.create!
-ents2 = Ent.create!
-ents3 = Ent.create!
-ents4 = Ent.create!
-ents5 = Ent.create!
+ents1 = Ent.create!(name: "Fun package", desc: "It's a blast")
 
-venue1 = Venue.create!(name: "venue1", cost: 100)
-venue2 = Venue.create!(name: "venue2", cost: 200)
-venue3 = Venue.create!(name: "venue3", cost: 300)
-venue4 = Venue.create!(name: "venue4", cost: 400)
-venue5 = Venue.create!(name: "venue5", cost: 500)
+venue1 = Venue.create!(name: "Emporium", cost: 100)
+venue2 = Venue.create!(name: "Sunflower Studio", cost: 200)
+venue3 = Venue.create!(name: "Dance Hall", cost: 300)
+venue4 = Venue.create!(name: "Big Barn", cost: 400)
+venue5 = Venue.create!(name: "Primo", cost: 500)
 
 
-item1 = Item.create!(item_type: 1, name: "item1" , url: "url1", desc: "desc1")
-item2 = Item.create!(item_type: 2, name: "item2" , url: "url2", desc: "desc2")
-item3 = Item.create!(item_type: 2, name: "item3" , url: "url3", desc: "desc3")
-item4 = Item.create!(item_type: 0, name: "item4" , url: "url4", desc: "desc4")
-item5 = Item.create!(item_type: 0, name: "item5" , url: "url5", desc: "desc5")
-item6 = Item.create!(item_type: 0, name: "item6" , url: "url6", desc: "desc6")
-item7 = Item.create!(item_type: 0, name: "item7" , url: "url7", desc: "desc7")
-item8 = Item.create!(item_type: 0, name: "item8" , url: "url8", desc: "desc8")
-item9 = Item.create!(item_type: 0, name: "item9" , url: "url9", desc: "desc9")
-item10 = Item.create!(item_type: 0, name: "item10" , url: "url10", desc: "desc10")
-item11 = Item.create!(item_type: 0, name: "item11" , url: "url11", desc: "desc11")
-item12 = Item.create!(item_type: 0, name: "item12" , url: "url12", desc: "desc12")
-item13 = Item.create!(item_type: 0, name: "item13" , url: "url13", desc: "desc13")
-item14 = Item.create!(item_type: 0, name: "item14" , url: "url14", desc: "desc14")
-item15 = Item.create!(item_type: 0, name: "item15" , url: "url15", desc: "desc15")
-item16 = Item.create!(item_type: 0, name: "item16" , url: "url16", desc: "desc16")
+item1 = Item.create!(item_type: 1, name: "Salad" , url: "url1", desc: "Ceasar", cost: 5)
+item2 = Item.create!(item_type: 1, name: "Pasta" , url: "url2", desc: "Hand crafted", cost: 5)
+item3 = Item.create!(item_type: 1, name: "Meatball" , url: "url3", desc: "desc3", cost: 9)
+item4 = Item.create!(item_type: 1, name: "Ice Cream" , url: "url4", desc: "desc4", cost: 3)
+item5 = Item.create!(item_type: 0, name: "Flowers" , url: "url5", desc: "desc5", cost: 20)
+item6 = Item.create!(item_type: 0, name: "Candles" , url: "url6", desc: "desc6", cost: 8)
+item7 = Item.create!(item_type: 2, name: "Retro Music" , url: "url7", desc: "desc7", cost: 100)
+item8 = Item.create!(item_type: 2, name: "Disco" , url: "url8", desc: "desc8", cost: 250)
+item9 = Item.create!(item_type: 2, name: "Comedian" , url: "url9", desc: "desc9", cost: 500)
+item10 = Item.create!(item_type: 0, name: "item10" , url: "url10", desc: "desc10", cost: 5)
+item11 = Item.create!(item_type: 0, name: "item11" , url: "url11", desc: "desc11", cost: 5)
+item12 = Item.create!(item_type: 0, name: "item12" , url: "url12", desc: "desc12", cost: 5)
+item13 = Item.create!(item_type: 0, name: "item13" , url: "url13", desc: "desc13", cost: 5)
+item14 = Item.create!(item_type: 0, name: "item14" , url: "url14", desc: "desc14", cost: 5)
+item15 = Item.create!(item_type: 0, name: "item15" , url: "url15", desc: "desc15", cost: 5)
+item16 = Item.create!(item_type: 0, name: "item16" , url: "url16", desc: "desc16", cost: 5)
 
-menu1 = Menu.create!(name: "menu1", desc: "desc1")
-menu2 = Menu.create!(name: "menu2", desc: "desc2")
-menu3 = Menu.create!(name: "menu3", desc: "desc3")
+menu1 = Menu.create!(name: "Italian", desc: "Very authentic!")
+menu3 = Menu.create!(name: "Ice Cream Party", desc: "Only Vanilla")
 
 client_addresses1 = ClientAddress.create!(client: client1, address: address1)
 client_addresses2 = ClientAddress.create!(client: client2, address: address3)
@@ -133,7 +124,7 @@ Rating.create!(supplier: supplier3, comment: "comment1", score: 5)
 
 menu_item1 = MenuItem.create!(menu: menu1, item: item1, quantity: 10)
 menu_item2 = MenuItem.create!(menu: menu1, item: item2, quantity: 20)
-menu_item3 = MenuItem.create!(menu: menu2, item: item3, quantity: 5)
+menu_item3 = MenuItem.create!(menu: menu1, item: item3, quantity: 5)
 menu_item4 = MenuItem.create!(menu: menu3, item: item4, quantity: 6)
 
 decor_item1 = DecorItem.create!(decor: decor1, item: item5, quantity: 10)
@@ -144,11 +135,11 @@ ent_item1 = EntItem.create!(ent: ents1, item: item7, quantity: 2, ord: 1)
 ent_item2 = EntItem.create!(ent: ents1, item: item8, quantity: 2, ord: 2)
 ent_item3 = EntItem.create!(ent: ents1, item: item9, quantity: 2, ord: 3)
 
-supplier_item1 = SupplierItem.create!(supplier: supplier1, item: item10, quantity: 2, cost: 4)
-supplier_item2 = SupplierItem.create!(supplier: supplier1, item: item11, quantity: 5, cost: 10)
-supplier_item3 = SupplierItem.create!(supplier: supplier2, item: item13, quantity: 3, cost: 5)
+supplier_item1 = SupplierItem.create!(supplier: supplier1, item: item10, quantity: 2)
+supplier_item2 = SupplierItem.create!(supplier: supplier1, item: item11, quantity: 5)
+supplier_item3 = SupplierItem.create!(supplier: supplier2, item: item13, quantity: 3)
 
-
-event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,20))
-event2 = Event.create!(client: client2, venue: venue2, menu: menu1, decor: decor1, ent: ents1, attendees: 200, date: 1.week.from_now)
-event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
+#Event.create!(venue: venue_waterloo, client: client, menu: menu1, decor: decor1, ent: ents1, attendees: 20, date: 1.week.from_now)
+#event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,20))
+#event2 = Event.create!(client: client2, venue: venue2, menu: menu1, decor: decor1, ent: ents1, attendees: 200, date: 1.week.from_now)
+#event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
