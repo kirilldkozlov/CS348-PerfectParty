@@ -4,6 +4,10 @@
   <h1>New Venue<h1>
 </div>
 
+<% if !params[:address] %>
+  <%= link_to 'New Address', venue_new_address_path(venue: 1), class: "btn btn-secondary mb-4" %>
+<% end %>
+
 <%= render 'form', venue: @venue %>
 
 <%= link_to 'Back', venues_path %>

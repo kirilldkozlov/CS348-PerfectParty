@@ -1,6 +1,16 @@
+<% if notice %>
+  <p class="alert alert-info mt-2"><%= notice %></p>
+<% else %>
+  <p></p>
+<% end %>
+
 <div class="jumbotron">
   <h1>New Client<h1>
 </div>
+
+<% if !params[:address] %>
+  <%= link_to 'New Address', client_new_address_path(client: 1), class: "btn btn-secondary mb-4" %>
+<% end %>
 
 <%= render 'form', client: @client %>
 
