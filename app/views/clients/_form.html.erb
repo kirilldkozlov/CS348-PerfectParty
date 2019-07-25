@@ -36,7 +36,7 @@
   <%= form.fields_for :client_address do |client_address| %>
     <div class="form-group">
      <%= client_address.label :address_id, 'Address:' %>
-     <%= client_address.collection_select :address_id, Address.all, :id, :full_address, {}, { class: "form-control" } %>
+     <%= client_address.collection_select :address_id, Address.all, :id, :full_address, {selected: params[:address].to_i}, { class: "form-control" } %>
    </div>
   <% end %>
 

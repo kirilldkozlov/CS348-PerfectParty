@@ -4,5 +4,10 @@
 
 <%= render 'form', address: @address %>
 
-
-<%= link_to 'Back', addresses_path %>
+<% if params[:client] == "1" %>
+  <%= link_to 'Back', new_client_path %>
+<% elsif params[:venue] == "1" %>
+  <%= link_to 'Back', new_venue_path %>
+<% else %>
+  <%= link_to 'Back', addresses_path %>
+<% end %>

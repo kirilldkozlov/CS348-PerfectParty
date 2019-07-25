@@ -24,12 +24,19 @@ class AddressesController < ApplicationController
   # POST /addresses
   # POST /addresses.json
   def create
-    @address = Address.new(address_params)
+    @address = Address.new(address_params.except(:client_exist, :venue_exist))
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to @address, notice: 'Address was successfully created.' }
-        format.json { render :show, status: :created, location: @address }
+        byebug
+        if address_params[:client_exist]
+          format.html { redirect_to new_client_with_address_path(address: @address.id), notice: 'Address was successfully created.' }
+        elsif address_params[:venue_exist]
+          format.html { redirect_to new_venue_with_address_path(address: @address.id), notice: 'Address was successfully created.' }
+        else
+          format.html { redirect_to @address, notice: 'Address was successfully created.' }
+          format.json { render :show, status: :created, location: @address }
+        end
       else
         format.html { render :new }
         format.json { render json: @address.errors, status: :unprocessable_entity }
@@ -69,6 +76,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:street_num, :street_name, :postal_code, :city, :province)
+      params.require(:address).permit(:street_num, :street_name, :postal_code, :city, :province, :client_exist, :venue_exist)
     end
 end

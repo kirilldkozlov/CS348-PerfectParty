@@ -38,6 +38,9 @@
     options_for_select(Address::PROVINCES), {}, { class: "form-control", style: "width: 80px;" } %>
   </div>
 
+  <%= form.hidden_field :client_exist, value: params[:client] %>
+  <%= form.hidden_field :venue_exist, value: params[:venue] %>
+
   <div class="form-group">
     <%= form.submit :Submit, class: "btn btn-primary"  %>
   </div>
