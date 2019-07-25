@@ -28,7 +28,6 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        byebug
         if address_params[:client_exist]
           format.html { redirect_to new_client_with_address_path(address: @address.id), notice: 'Address was successfully created.' }
         elsif address_params[:venue_exist]
@@ -38,8 +37,16 @@ class AddressesController < ApplicationController
           format.json { render :show, status: :created, location: @address }
         end
       else
-        format.html { render :new }
-        format.json { render json: @address.errors, status: :unprocessable_entity }
+        if address_params[:client_exist]
+          @client = 1
+          format.html { render action: :new }
+        elsif address_params[:venue_exist]
+          @venue = 1
+          format.html { render action: :new }
+        else
+          format.html { render :new }
+          format.json { render json: @address.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
