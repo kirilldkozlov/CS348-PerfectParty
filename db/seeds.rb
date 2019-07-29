@@ -140,6 +140,6 @@ supplier_item2 = SupplierItem.create!(supplier: supplier1, item: item11, quantit
 supplier_item3 = SupplierItem.create!(supplier: supplier2, item: item13, quantity: 3)
 
 #Event.create!(venue: venue_waterloo, client: client, menu: menu1, decor: decor1, ent: ents1, attendees: 20, date: 1.week.from_now)
-#event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,20))
+event1 = Event.create!(client: client1, venue: venue1, menu: menu1, decor: decor1, ent: ents1, attendees: 100, date: Date.new(2019,7,28))
 #event2 = Event.create!(client: client2, venue: venue2, menu: menu1, decor: decor1, ent: ents1, attendees: 200, date: 1.week.from_now)
-#event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
+event_item1 = EventItem.create!(item: item14, event: event1, supplier: supplier1, quantity: 20)
